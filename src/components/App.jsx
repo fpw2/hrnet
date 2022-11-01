@@ -14,7 +14,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Navigate replace to="/home"></Navigate>} />
               <Route path="/home" element={<Home />} />
-              <Route path="/employee" element={<Employee />} />
+              <Route path="/employee-list" element={<Employee />} />
               <Route path="*" element={<Error />} />
             </Routes>
         <Footer />

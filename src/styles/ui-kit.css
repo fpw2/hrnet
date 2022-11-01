@@ -6,13 +6,12 @@
 
 .input {
   display: block;
-  margin-top: 10px;
   font-size: 16px;
   font-size: 16px;
-  margin-top: 1em;
-  margin-bottom: 1.5em;
+  margin-top: 5px;
+  margin-bottom: 15px;
   padding: 0.75em 0.5em;
-  min-width: 200px;
+  min-width: 220px;
   border: none;
   border-left: 7px solid var(--neutral-4);
   transition: border-left-color 160ms;
@@ -25,8 +24,62 @@ input:focus {
 }
 
 ::placeholder {
-  color: var(--neutral-4);
+  color: var(--neutral-4) !important;
 }
+
+/* SELECT */
+.select-container {
+  display: block;
+  font-size: 16px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: none;
+  transition: border-left-color 160ms;
+  background-color: white;
+  min-width: 243px;
+}
+
+/* .select__control {
+  background-color: aqua;
+  border-radius: 0px !important;
+  border-style: none !important;
+  border-left: 7px solid var(--neutral-4) !important;
+  padding: 3px 0px;
+} */
+
+
+.select__input-container::placeholder {
+  outline: none;
+  color: red !important;
+}
+
+.select__value-container {
+  border-left: 7px solid var(--neutral-4) ;
+  border-style: none !important;
+  /*background-color: blue;*/
+}
+
+/* .select__indicators {
+  background-color: blueviolet;
+} */
+
+.select__menu:focus {
+  background-color: green;
+}
+
+.select__menu-list:focus {
+  background-color: red;
+}
+
+.select__option:focus {
+  background-color: yellow;
+}
+
+.select__option:focus {
+  background-color: yellow;
+}
+
 
 /* BUTTON */
 .btn {

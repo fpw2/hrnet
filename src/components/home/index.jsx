@@ -1,12 +1,18 @@
+import { useForm } from "react-hook-form"
 import Input from "../ui-kit/Input"
 import Button from "../ui-kit/Button"
 import { HandleDatePicker } from "./DatePicker"
+import HandleSelect from "../ui-kit/Select"
+import { Link } from "react-router-dom"
 
 export default function Home() {
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data)
+
     return(
         <div className="page-employee">
             <div>
-                <a href="employee-list.html">View Current Employees</a>
+                <Link to="/employee-list">View Current Employees</Link>
                 <h2>Create Employee</h2>
                 <form id="create-employee">
                     <Input 
@@ -27,33 +33,31 @@ export default function Home() {
                         id="start-date"
                         label="Start Date"
                         placeholder="Click to select a date"
-                    />                
-
-                    
-                    {/* <fieldset class="address">
+                    />                                     
+                    <fieldset className="address">
                         <legend>Address</legend>
-
-                        <label for="street">Street</label>
-                        <input id="street" type="text" />
-
-                        <label for="city">City</label>
-                        <input id="city" type="text" />
-
-                        <label for="state">State</label>
-                        <select name="state" id="state"></select>
-
-                        <label for="zip-code">Zip Code</label>
-                        <input id="zip-code" type="number" />
-                    </fieldset>
-
-                    <label for="department">Department</label>
-                    <select name="department" id="department">
-                        <option>Sales</option>
-                        <option>Marketing</option>
-                        <option>Engineering</option>
-                        <option>Human Resources</option>
-                        <option>Legal</option>
-                    </select> */}
+                        <Input 
+                            id="street"
+                            placeholder="Street"
+                        />
+                        <Input 
+                            id="city"
+                            placeholder="City"
+                        /> 
+                        <HandleSelect 
+                            id="state"
+                            label="State"
+                        />   
+                        <Input 
+                            id="zip-code"
+                            placeholder="Zip Code"
+                            type="number"
+                        /> 
+                    </fieldset> 
+                    <HandleSelect 
+                            id="department"
+                            label="Department"
+                    />
                 </form>
                 <Button>Save</Button>
             </div>

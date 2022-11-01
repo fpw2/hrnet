@@ -3,7 +3,7 @@
 @import "./ui-kit.css";
 
 body {
-  background-color: var(--neutral-5);
+  background: var(--neutral-5);
   margin: 0;
 }
 
