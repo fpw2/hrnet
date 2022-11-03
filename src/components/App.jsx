@@ -7,6 +7,7 @@ import Footer from "./layout/Footer"
 import Error from "./error/Error"
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <Container>

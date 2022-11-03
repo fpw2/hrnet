@@ -1,6 +1,7 @@
 @import "./variable.css";
-@import "./home.css";
 @import "./ui-kit.css";
+@import "./home.css";
+@import "./employee.css";
 
 body {
   background: var(--neutral-5);
@@ -12,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
+  min-width: 1200px;
 }
 
 /* HEADER */
