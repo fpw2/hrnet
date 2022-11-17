@@ -40,47 +40,6 @@ input:focus {
   min-width: 243px;
 }
 
-/* .select__control {
-  background-color: aqua;
-  border-radius: 0px !important;
-  border-style: none !important;
-  border-left: 7px solid var(--neutral-4) !important;
-  padding: 3px 0px;
-} */
-
-
-.select__input-container::placeholder {
-  outline: none;
-  color: red !important;
-}
-
-.select__value-container {
-  border-left: 7px solid var(--neutral-4) ;
-  border-style: none !important;
-  /*background-color: blue;*/
-}
-
-/* .select__indicators {
-  background-color: blueviolet;
-} */
-
-.select__menu:focus {
-  background-color: green;
-}
-
-.select__menu-list:focus {
-  background-color: red;
-}
-
-.select__option:focus {
-  background-color: yellow;
-}
-
-.select__option:focus {
-  background-color: yellow;
-}
-
-
 /* BUTTON */
 .btn {
   border-radius: 3px;

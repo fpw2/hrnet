@@ -1,130 +1,76 @@
 import React from "react";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { useTable } from "react-table";
-
-const Styles = styled.div`
-  padding: 1rem;
-
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-
-    .pagination {
-      padding: 0.5rem;
-    }
-  }
-`;
-
-function Table({ columns, data }) {
-  // Use the state and functions returned from useTable to build your UI
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
-
-  // Render the UI for your table
-  return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-}
+import DataTable from "react-data-table-component";
+import { createTheme } from "react-data-table-component";
 
 export default function EmployeeTable() {
   const employee = useSelector((state) => state.employee.listEmployee);
-  console.log(employee);
   const data = React.useMemo(() => employee, [employee]);
+  console.log(data);
 
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: "First Name",
-        accessor: "firstName", // accessor is the "key" in the data
-      },
-      {
-        Header: "Last Name",
-        accessor: "lastName",
-      },
-      {
-        Header: "Start Date",
-        accessor: "",
-      },
-      {
-        Header: "Department",
-        accessor: "department",
-      },
-      {
-        Header: "Date of Birth",
-        accessor: "",
-      },
-      {
-        Header: "Street",
-        accessor: "street",
-      },
-      {
-        Header: "City",
-        accessor: "city",
-      },
-      {
-        Header: "State",
-        accessor: "state",
-      },
-      {
-        Header: "Zip Code",
-        accessor: "zipCode",
-      },
-    ],
-    []
-  );
+  const columns = [
+    {
+      name: "First Name",
+      selector: (row) => row.firstName,
+      sortable: true,
+    },
+    {
+      name: "Last Name",
+      selector: (row) => row.lastName,
+      sortable: true,
 
-  return (
-    <>
-      {employee.length === 0 ? (
-        <p>No employee available</p>
-      ) : (
-        <Styles>
-          <Table columns={columns} data={data} />
-        </Styles>
-      )}
-    </>
-  );
+    },
+    {
+      name: "Start Date",
+      selector: (row) => row.startDate,
+      sortable: true,
+    },
+    {
+      name: "Department",
+      selector: (row) => row.department,
+      sortable: true,
+    },
+    {
+      name: "Date of Birth",
+      selector: (row) => row.dateOfBirth,
+      sortable: true,
+    },
+    {
+      name: "Street",
+      selector: (row) => row.street,
+      sortable: true,
+    },
+    {
+      name: "City",
+      selector: (row) => row.city,
+      sortable: true,
+    },
+    {
+      name: "State",
+      selector: (row) => row.state,
+      sortable: true,
+    },
+    {
+      name: "Zip Code",
+      selector: (row) => row.zipCode,
+      sortable: true,
+    },
+  ];
+
+  createTheme("custom", {
+    text: {
+      primary: "var(--white)",
+      // pagination
+      secondary: "var(--primary-5)",
+    },
+    background: {
+      default: "var(--primary-2)",
+    },
+    // line
+    divider: {
+      default: "var(--primary-3)",
+    },
+  })
+
+  return <DataTable columns={columns} data={data} theme="custom" pagination/>;
 }

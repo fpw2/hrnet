@@ -15,6 +15,7 @@ const optionState = states.map((state) => {
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
+    // this line disable the default color of the border
     boxShadow: "none",
     borderRadius: "0px",
     borderStyle: "none",
@@ -23,16 +24,16 @@ const customStyles = {
     ":hover": {
       borderColor: "var(--primary-1)",
     },
+    ":focus": {
+      borderColor: state.isFocused ? "var(--primary-4)" : state.isSelected ? "var(--primary-1)" : undefined,
+    }
   }),
 
   input: (provided, state) => ({
     ...provided,
-    "::placeholder": {
-      color: "red",
-    },
-    ":focus": {
-      borderColor: "var(--primary-1)",
-    },
+    borderColor: state.isFocused ? "var(--primary-4)" : "var(--primary-1)" ,
+
+
   }),
 
   option: (provided, state) => ({
@@ -64,8 +65,9 @@ export default function HandleSelect({ id, label }) {
             styles={customStyles}
             className="select-container"
             classNamePrefix="select"
-            onChange={(e) => onChange(e.value)}
+            onChange={onChange}
             options={options}
+            required
           />
         )}
       />

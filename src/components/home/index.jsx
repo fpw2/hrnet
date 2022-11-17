@@ -7,15 +7,22 @@ import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../features/counter/employeeSlice";
 import { useEffect } from "react";
+// import Modal from "fpw-modal"
 
 export default function Home() {
 
   const methods = useForm();
+
   const dispatch = useDispatch();
   const onSubmit = (data) => {
+    data.startDate = data.startDate.toLocaleDateString()
+    data.dateOfBirth = data.dateOfBirth.toLocaleDateString()
+    data.department = data.department.value
+    data.state = data.state.value
     console.log("register",data);
     dispatch(addEmployee(data));
-    // reset({...data})
+    // document.querySelector("#create-employee").reset()
+    
   };
 
   // useEffect(() => {
@@ -28,14 +35,15 @@ export default function Home() {
   // }, [formState, reset]);
 
   return (
-    <div className="page-employee">
+    <div className="page-home">
       <div>
-        <Link to="/employee-list">View Current Employees</Link>
-        <h2>Create Employee</h2>
+        <Link className="link" to="/employee-list">View Current Employees</Link>
+        {/* <Modal /> */}
+        <h2 className="home-create">Create Employee</h2>
         {/* FormProvider is used to access data of input in deep component */}
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)} id="create-employee">
-            <Input id="firstName" placeholder="First Name" />
+            <Input id="firstName" placeholder="First Name"  />
             <Input id="lastName" placeholder="Last Name" />
             <HandleDatePicker
               id="dateOfBirth"
@@ -49,8 +57,8 @@ export default function Home() {
             />
             <fieldset className="address">
               <legend>Address</legend>
-              <Input id="street" placeholder="Street" />
-              <Input id="city" placeholder="City" />
+              <Input id="street" placeholder="Street"  />
+              <Input id="city" placeholder="City"  />
               <HandleSelect id="state" label="State" />
               <Input id="zipCode" placeholder="Zip Code" type="number" />
             </fieldset>

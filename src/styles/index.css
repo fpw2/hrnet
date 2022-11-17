@@ -3,9 +3,25 @@
 @import "./home.css";
 @import "./employee.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto&display=swap');
 body {
   background: var(--neutral-5);
+  font-family: "Roboto";
   margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--white);
+  color: var(--primary-1);
+  margin: 10px 0;
+}
+
+.link:hover {
+  background-color: var(--primary-4);
 }
 
 /* CONTAINER */
@@ -31,3 +47,4 @@ body {
 .address {
   margin-top: 10px;
 }
+

@@ -14,7 +14,7 @@ export default function Input({id, className, name, placeholder, type="text", re
             className={classNames}
             placeholder={placeholder}
             type={type} 
-            required={required} 
+            required 
             {...register(id)}
             {...rest}
         />

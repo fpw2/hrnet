@@ -1,6 +1,5 @@
-.page-employee {
-    display: flex;
-    flex-direction: column;
+.home-create {
+    color: var(--accent-2);
 }
 
 .create-employee {
@@ -12,3 +11,4 @@
     padding-bottom: 0px;
     margin-bottom: 20px;
 }
+
