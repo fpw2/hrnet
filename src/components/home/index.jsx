@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../features/counter/employeeSlice";
 import { useEffect } from "react";
-// import Modal from "fpw-modal"
 
 export default function Home() {
 

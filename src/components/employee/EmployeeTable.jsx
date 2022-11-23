@@ -72,5 +72,12 @@ export default function EmployeeTable() {
     },
   })
 
-  return <DataTable columns={columns} data={data} theme="custom" pagination/>;
+  return (<>
+    <DataTable 
+      columns={columns} 
+      data={data} 
+      theme="custom" 
+      pagination
+    />
+   </>)
 }
