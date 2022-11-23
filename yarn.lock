@@ -6987,6 +6987,17 @@
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
   "version" "0.2.0"
 
+"fpw-my-modal@^0.1.1":
+  "integrity" "sha512-c5Y9OnBQGYGYdtAnEtMD4r8bKlTwRX4ftb0+pRTvbNU/Br5FRFq0nRDjrr22HqR+VVYLhezb67gD6cPIcsBSoA=="
+  "resolved" "https://registry.npmjs.org/fpw-my-modal/-/fpw-my-modal-0.1.1.tgz"
+  "version" "0.1.1"
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.5"
+    "@testing-library/react" "^13.4.0"
+    "@testing-library/user-event" "^13.5.0"
+    "styled-components" "^5.3.6"
+    "web-vitals" "^2.1.4"
+
 "fraction.js@^4.2.0":
   "integrity" "sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA=="
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"

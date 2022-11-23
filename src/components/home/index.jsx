@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../features/counter/employeeSlice";
-import { useEffect } from "react";
+import {ModalApp} from "fpw-my-modal"
 
 export default function Home() {
 
@@ -19,19 +19,8 @@ export default function Home() {
     data.department = data.department.value
     data.state = data.state.value
     console.log("register",data);
-    dispatch(addEmployee(data));
-    // document.querySelector("#create-employee").reset()
-    
+    dispatch(addEmployee(data));    
   };
-
-  // useEffect(() => {
-  //   if (formState.isSubmitSuccessful) {
-  //     reset({ 
-  //       firstName: "",
-  //       lastName: ""
-  //   });
-  //   }
-  // }, [formState, reset]);
 
   return (
     <div className="page-home">
@@ -63,9 +52,11 @@ export default function Home() {
             </fieldset>
             <HandleSelect id="department" label="Department" />
             <Button type="submit">Save</Button>
+            <ModalApp buttonText="Send" message="Employee created" />
           </form>
         </FormProvider>
       </div>
+
       {/* <div id="confirmation" className="modal">
         Employee Created!
       </div> */}
