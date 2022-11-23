@@ -13,8 +13,7 @@ export default function App() {
       <Container>
         <Header />
             <Routes>
-              <Route path="/" element={<Navigate replace to="/home"></Navigate>} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/employee-list" element={<Employee />} />
               <Route path="*" element={<Error />} />
             </Routes>
