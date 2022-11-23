@@ -6987,10 +6987,10 @@
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
   "version" "0.2.0"
 
-"fpw-my-modal@^0.1.1":
-  "integrity" "sha512-c5Y9OnBQGYGYdtAnEtMD4r8bKlTwRX4ftb0+pRTvbNU/Br5FRFq0nRDjrr22HqR+VVYLhezb67gD6cPIcsBSoA=="
-  "resolved" "https://registry.npmjs.org/fpw-my-modal/-/fpw-my-modal-0.1.1.tgz"
-  "version" "0.1.1"
+"fpw-my-modal@^0.1.4":
+  "integrity" "sha512-TjruEci4npawYl791PcZ4Cq+M18Pc9LQEz7PJKZBed74upD8WIzfwVmeemW5eEKfYElsYG8YP2Q+OqDMjXKeag=="
+  "resolved" "https://registry.npmjs.org/fpw-my-modal/-/fpw-my-modal-0.1.4.tgz"
+  "version" "0.1.4"
   dependencies:
     "@testing-library/jest-dom" "^5.16.5"
     "@testing-library/react" "^13.4.0"

@@ -1,14 +1,16 @@
 import Input from "../ui-kit/Input";
-import Button from "../ui-kit/Button";
+import Button from "../ui-kit/Button"
 import { HandleDatePicker } from "./DatePicker";
 import HandleSelect from "../ui-kit/Select";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../features/counter/employeeSlice";
-import {ModalApp} from "fpw-my-modal"
+import { Modal } from "fpw-my-modal"
+import { useState } from "react";
 
 export default function Home() {
+  const [openModal, setOpenModal] = useState(false)
 
   const methods = useForm();
 
@@ -19,7 +21,8 @@ export default function Home() {
     data.department = data.department.value
     data.state = data.state.value
     console.log("register",data);
-    dispatch(addEmployee(data));    
+    setOpenModal(true)
+    dispatch(addEmployee(data));     
   };
 
   return (
@@ -52,14 +55,10 @@ export default function Home() {
             </fieldset>
             <HandleSelect id="department" label="Department" />
             <Button type="submit">Save</Button>
-            <ModalApp buttonText="Send" message="Employee created" />
           </form>
         </FormProvider>
       </div>
-
-      {/* <div id="confirmation" className="modal">
-        Employee Created!
-      </div> */}
+      <Modal openModal={openModal} setOpenModal={setOpenModal} message="Employee created" />
     </div>
   );
 }

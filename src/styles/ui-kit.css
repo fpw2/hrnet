@@ -77,28 +77,6 @@ input:focus {
   cursor: default;
 }
 
-.btn-accent {
-  color: var(--white);
-  background-color: var(--accent-1);
-}
-
-.btn-accent:hover {
-  color: var(--white);
-  background-color: var(--accent-2);
-  text-decoration: none;
-}
-
-.btn-accent:active {
-  color: var(--accent-1);
-  background-color: var(--accent-4);
-}
-
-.btn-accent[disabled] {
-  color: var(--accent-4);
-  background-color: var(--accent-5);
-  cursor: default;
-}
-
 .btn-outline {
   color: var(--primary-1);
   background-color: var(--primary-4);
