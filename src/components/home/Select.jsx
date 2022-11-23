@@ -63,6 +63,7 @@ export default function HandleSelect({ id, label }) {
           <Select
             id={id}
             styles={customStyles}
+            aria-label = "choose an option"
             className="select-container"
             classNamePrefix="select"
             onChange={onChange}

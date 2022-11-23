@@ -1,7 +1,7 @@
 import Input from "../ui-kit/Input";
 import Button from "../ui-kit/Button"
 import { HandleDatePicker } from "./DatePicker";
-import HandleSelect from "../ui-kit/Select";
+import HandleSelect from "./Select";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";

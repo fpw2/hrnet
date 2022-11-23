@@ -10,7 +10,8 @@ export default function Input({id, className, name, placeholder, type="text", re
         {required && <span className="input-required">*</span>}
         </label>
         <input 
-            id={id}
+            id={id} 
+            name={id}
             className={classNames}
             placeholder={placeholder}
             type={type} 
