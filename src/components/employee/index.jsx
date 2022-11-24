@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import EmployeeTable from "./EmployeeTable";
 
+/**
+ * Display a table with the list of employee
+ * @returns html
+ */
 export default function EmployeeList() {
     
     return (

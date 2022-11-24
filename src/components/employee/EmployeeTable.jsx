@@ -4,13 +4,20 @@ import DataTable from "react-data-table-component";
 import { createTheme } from "react-data-table-component";
 import { useState } from "react";
 import { useEffect } from "react";
-import { set } from "react-hook-form";
 
+/**
+ * Display a table 
+ * @returns html
+ */
 export default function EmployeeTable() {
   const employee = useSelector((state) => state.employee.listEmployee);
   const data = React.useMemo(() => employee, [employee]);
   const [tableResult, setTableResult] = useState(employee);
 
+  /**
+   * Filter the table with the firstName
+   * @param {e} event 
+   */
   const onChange = async (e) => {
     // eslint-disable-next-line array-callback-return
     const searchFirstname = await data.filter(employee => {
@@ -24,12 +31,10 @@ export default function EmployeeTable() {
       } 
 
     });
-    console.log(searchFirstname)
     if(searchFirstname.length === 0){ 
         setTableResult(data)
     } else {
       setTableResult(searchFirstname);
-
     }
   };
 

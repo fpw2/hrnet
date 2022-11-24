@@ -9,12 +9,21 @@ import { addEmployee } from "../../features/counter/employeeSlice";
 import { Modal } from "fpw-my-modal"
 import { useState } from "react";
 
+/**
+ * Display a form
+ * @returns html
+ */
 export default function Home() {
   const [openModal, setOpenModal] = useState(false)
 
   const methods = useForm();
 
   const dispatch = useDispatch();
+
+  /**
+   * Send data to localstorage
+   * @param {data} data of all input
+   */
   const onSubmit = (data) => {
     data.startDate = data.startDate.toLocaleDateString()
     data.dateOfBirth = data.dateOfBirth.toLocaleDateString()

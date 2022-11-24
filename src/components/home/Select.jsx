@@ -4,6 +4,9 @@ import { useFormContext, Controller } from "react-hook-form";
 import { states } from "../../data/states";
 import { departments } from "../../data/departments";
 
+/**
+ * List option for state
+ */
 const optionState = states.map((state) => {
   const option = {
     value: state["abbreviation"],
@@ -12,6 +15,9 @@ const optionState = states.map((state) => {
   return option;
 });
 
+/**
+ * Style customization for select
+ */
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
@@ -44,6 +50,11 @@ const customStyles = {
   
 };
 
+/**
+ * Display a select
+ * @param {id, label}  
+ * @returns html
+ */
 export default function HandleSelect({ id, label }) {
   const { control } = useFormContext();
 
@@ -59,16 +70,16 @@ export default function HandleSelect({ id, label }) {
       <Controller
         name={id}
         control={control}
+        rules={{ required: true }}
         render={({ field: { onChange } }) => (
           <Select
             id={id}
             styles={customStyles}
-            aria-label = "choose an option"
+            aria-label="choose an option"
             className="select-container"
             classNamePrefix="select"
             onChange={onChange}
             options={options}
-            required
           />
         )}
       />
