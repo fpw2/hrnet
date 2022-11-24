@@ -58,7 +58,7 @@ export default function Home() {
           </form>
         </FormProvider>
       </div>
-      <Modal openModal={openModal} setOpenModal={setOpenModal} message="Employee created" />
+      <Modal openModal={openModal} setOpenModal={setOpenModal} message="Employee created" className="modal" />
     </div>
   );
 }

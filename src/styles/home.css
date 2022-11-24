@@ -16,3 +16,7 @@
     margin-bottom: 20px;
 }
 
+.modal {
+    background-color: var(--primary-4) !important;
+    color: var(--black) !important;
+}

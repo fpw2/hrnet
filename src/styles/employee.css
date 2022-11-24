@@ -8,3 +8,23 @@
     align-self: center;
 }
 
+
+.table-search {
+    display: flex;
+    justify-content: end;
+}
+
+.table-search label {
+    align-self: center;
+    padding-right: 5px;
+}
+
+.search {
+    padding: 10px;
+    border: none;
+    margin: 10px 0px;
+}
+
+.search:focus {
+    border: 1px solid black;
+}

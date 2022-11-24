@@ -2,11 +2,36 @@ import React from "react";
 import { useSelector } from "react-redux";
 import DataTable from "react-data-table-component";
 import { createTheme } from "react-data-table-component";
+import { useState } from "react";
+import { useEffect } from "react";
+import { set } from "react-hook-form";
 
 export default function EmployeeTable() {
   const employee = useSelector((state) => state.employee.listEmployee);
   const data = React.useMemo(() => employee, [employee]);
-  console.log(data);
+  const [tableResult, setTableResult] = useState(employee);
+
+  const onChange = async (e) => {
+    // eslint-disable-next-line array-callback-return
+    const searchFirstname = await data.filter(employee => {
+      if (
+        employee.firstName
+          .toString()
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
+      ) {
+        return employee
+      } 
+
+    });
+    console.log(searchFirstname)
+    if(searchFirstname.length === 0){ 
+        setTableResult(data)
+    } else {
+      setTableResult(searchFirstname);
+
+    }
+  };
 
   const columns = [
     {
@@ -57,6 +82,8 @@ export default function EmployeeTable() {
     },
   ];
 
+  useEffect(() => {}, [tableResult]);
+
   createTheme("custom", {
     text: {
       primary: "var(--white)",
@@ -72,12 +99,19 @@ export default function EmployeeTable() {
     },
   })
 
-  return (<>
+
+  return (
+  <div className="table">
+    <div className="table-search">
+      <label htmlFor="table-search">Search:</label>
+      <input onChange={onChange} type="text" placeholder="Search by First Name" className="search" name="table-search"/>
+    </div>
     <DataTable 
       columns={columns} 
-      data={data} 
+      data={tableResult} 
       theme="custom" 
       pagination
     />
-   </>)
+  </div>
+  )
 }
