@@ -12,6 +12,7 @@ import { useEffect } from "react";
 export default function EmployeeTable() {
   const employee = useSelector((state) => state.employee.listEmployee);
   const data = React.useMemo(() => employee, [employee]);
+  console.log(data)
   const [tableResult, setTableResult] = useState(employee);
 
   /**
@@ -139,13 +140,15 @@ export default function EmployeeTable() {
 
   return (
   <div className="table">
-    <div className="table-header">
-      <h2 className="table-title">Current employee</h2>
-      <div className="table-search">
-        <label htmlFor="table-search">Search:</label>
-        <input onChange={onChange} type="text" placeholder="Search by First Name" className="search" name="table-search"/>
+    {data.length > 0 &&
+      <div className="table-header">
+        <h2 className="table-title">Current employee</h2>
+        <div className="table-search">
+          <label htmlFor="table-search">Search:</label>
+          <input onChange={onChange} type="text" placeholder="Search by First Name" className="search" name="table-search"/>
+        </div>
       </div>
-    </div>
+    }
     <DataTable 
       // title="Current employee"
       columns={columns} 
