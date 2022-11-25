@@ -3,7 +3,6 @@ import Container from "./layout/Container"
 import Header from "./layout/Header"
 import Home from "./home"
 import Employee from "./employee"
-import Footer from "./layout/Footer"
 import Error from "./error/Error"
 
 export default function App() {
@@ -17,7 +16,6 @@ export default function App() {
               <Route path="/employee-list" element={<Employee />} />
               <Route path="*" element={<Error />} />
             </Routes>
-        <Footer />
       </Container>
   </BrowserRouter>
   ) 

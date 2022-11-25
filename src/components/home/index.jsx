@@ -2,7 +2,6 @@ import Input from "../ui-kit/Input";
 import Button from "../ui-kit/Button"
 import { HandleDatePicker } from "./DatePicker";
 import HandleSelect from "./Select";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../features/counter/employeeSlice";
@@ -35,10 +34,9 @@ export default function Home() {
   };
 
   return (
+  <>
     <div className="page-home">
       <div>
-        <Link className="link" to="/employee-list">View Current Employees</Link>
-        {/* <Modal /> */}
         <h2 className="home-create">Create Employee</h2>
         {/* FormProvider is used to access data of input in deep component */}
         <FormProvider {...methods}>
@@ -67,7 +65,8 @@ export default function Home() {
           </form>
         </FormProvider>
       </div>
-      <Modal openModal={openModal} setOpenModal={setOpenModal} message="Employee created" className="modal" />
     </div>
+    <Modal openModal={openModal} setOpenModal={setOpenModal} message="Employee created" className="modal" />
+  </>
   );
 }

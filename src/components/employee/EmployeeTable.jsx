@@ -89,32 +89,69 @@ export default function EmployeeTable() {
 
   useEffect(() => {}, [tableResult]);
 
+  const customStyle= {
+    headRow: {
+      style: {
+        width:"100%",
+        fontSize: "14px",
+        color:"var(--white)",
+        name: <div>Case ID</div>
+      },
+    },
+    tableCol: {
+      whiteSpace: "pre-line",
+      color: "var(--primary-2)",
+
+    },
+    rows: {
+      style: {
+        fontSize: "14px"
+      },
+  },
+  pagination: {
+    style: {
+      minHeight: "80px",
+      fontSize: "14px",
+    },
+    button: {
+      color:'var(--white)',
+      backgoundColor:"var(--white)",
+      cursor: 'pointer',
+    },
+  },
+}
+
   createTheme("custom", {
     text: {
-      primary: "var(--white)",
+      primary: "var(--primary-4)",
       // pagination
-      secondary: "var(--primary-5)",
+      secondary: "var(--white)",
     },
     background: {
       default: "var(--primary-2)",
     },
     // line
     divider: {
-      default: "var(--primary-3)",
+      default: "var(--primary-1)",
     },
   })
 
 
   return (
   <div className="table">
-    <div className="table-search">
-      <label htmlFor="table-search">Search:</label>
-      <input onChange={onChange} type="text" placeholder="Search by First Name" className="search" name="table-search"/>
+    <div className="table-header">
+      <h2 className="table-title">Current employee</h2>
+      <div className="table-search">
+        <label htmlFor="table-search">Search:</label>
+        <input onChange={onChange} type="text" placeholder="Search by First Name" className="search" name="table-search"/>
+      </div>
     </div>
     <DataTable 
+      // title="Current employee"
       columns={columns} 
       data={tableResult} 
       theme="custom" 
+      customStyles={customStyle}
       pagination
     />
   </div>

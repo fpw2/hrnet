@@ -1,17 +1,17 @@
-.employee-container {
+
+
+
+.table-header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.employee-container>h1, a {
-    align-self: center;
+.table-title {
+    color: var(--tertiary-1);
+
 }
-
-
 .table-search {
     display: flex;
-    justify-content: end;
 }
 
 .table-search label {
@@ -20,9 +20,9 @@
 }
 
 .search {
-    padding: 10px;
+    padding: 10px ;
     border: none;
-    margin: 10px 0px;
+    margin: 15px 0px;
 }
 
 .search:focus {

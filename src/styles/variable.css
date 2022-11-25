@@ -2,13 +2,19 @@
     --white: #fff;
     --black: #000;
   
-    /* Primary colors*/
-    --primary-1: #2b8379;
-    --primary-2: #19a596;
+    /* Primary colors */
+    --primary-1: #93ad18;
+    --primary-2: #4A560C;
     --primary-3: #7fd1c7;
-    --primary-4: #7fd1c7;
+    --primary-4: #D7E0A8;
     --primary-5: #d0f3ef;
+
+    /* Secondary colors*/
+    --secondary-1: #1893AD;
   
+    /* Tertiary colors */
+    --tertiary-1: #AD1893;
+
     /* Neutral colors */
     --neutral-1: #2c2c2c;
     --neutral-2: #434343;
@@ -18,7 +24,7 @@
   
     /* Accent-blue colors */
     --accent-1: #970e3d;
-    --accent-2: #c43464;
+    --accent-2: #AD1893;
     --accent-3: #de7699;
     --accent-4: #e6c3ce;
     --accent-5: #fff2f7;
