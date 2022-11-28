@@ -10,7 +10,6 @@
     "@trendmicro/react-datepicker": "^1.0.0-alpha.7",
     "clsx": "^1.2.1",
     "fpw-my-modal": "^0.1.7",
-    "modal-component-fpw": "^0.1.9",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.3",
