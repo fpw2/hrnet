@@ -70,7 +70,6 @@ export default function HandleSelect({ id, label }) {
       <Controller
         name={id}
         control={control}
-        rules={{ required: true }}
         render={({ field: { onChange } }) => (
           <Select
             id={id}
@@ -80,6 +79,7 @@ export default function HandleSelect({ id, label }) {
             classNamePrefix="select"
             onChange={onChange}
             options={options}
+            required
           />
         )}
       />

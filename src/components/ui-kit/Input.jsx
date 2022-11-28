@@ -5,7 +5,8 @@ export default function Input({id, className, name, placeholder, type="text", re
     const classNames = clsx("input", className) // "input": true => allways this class
     const { register } = useFormContext()
 
-    return (<>
+    return (
+    <>
         <label htmlFor={id} className="label">{placeholder}
         {required && <span className="input-required">*</span>}
         </label>

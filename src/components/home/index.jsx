@@ -24,11 +24,12 @@ export default function Home() {
    * @param {data} data of all input
    */
   const onSubmit = (data) => {
+    console.log("register",data);
     data.startDate = data.startDate.toLocaleDateString()
     data.dateOfBirth = data.dateOfBirth.toLocaleDateString()
-    data.department = data.department.value
     data.state = data.state.value
-    console.log("register",data);
+    data.department = data.department.value
+
     setOpenModal(true)
     dispatch(addEmployee(data));     
   };

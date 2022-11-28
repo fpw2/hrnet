@@ -12,7 +12,7 @@ export const employeeSlice = createSlice({
   reducers: {
     addEmployee: (state, {payload}) => {
       state.listEmployee.push(payload)
-      localStorage.setItem("employee",JSON.stringify(state.listEmployee))
+      localStorage.setItem("employee",JSON.stringify(state.listEmployee)) // convert JavaScript to JSON string
     }
   }
 });

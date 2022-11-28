@@ -12,7 +12,6 @@ import { useEffect } from "react";
 export default function EmployeeTable() {
   const employee = useSelector((state) => state.employee.listEmployee);
   const data = React.useMemo(() => employee, [employee]);
-  console.log(data)
   const [tableResult, setTableResult] = useState(employee);
 
   /**
